@@ -22,14 +22,23 @@ import { useHistory } from 'react-router'
             e.preventDefault()
             console.log('adnan',login);
             dispatch(allActions.loginAction(login))
-            history.push('/')
+
+            const check = localStorage.getItem('userInfo')?JSON.parse(localStorage.getItem('userInfo')):null
+            console.log('user checking',check)
+            const role = check?check.data.user.roles[0].name:''
+            if(role === 'admin'){
+                history.push('/admin')
+            }
+            if(role === 'manager'){
+                history.push('/manager')
+            }
+            if(role === 'user'){
+                history.push('/user')
+            }
+           
         }
     return (
-    //     <form onSubmit={submitHandler}>
-    //     <input type="text" id={styles.text} name="email" value={login.email} onChange={handleChange} className="form-control" placeholder="username" />
-    //     <input type="password" id={styles.text} name="password" value={login.password} onChange={handleChange} className="form-control" placeholder="password" />
-    //    <button type="submit">Login</button>
-    //     </form>
+    
             <section className={styles.section}>
             <div className='container'>
                 <div className="d-flex justify-content-around h-100">

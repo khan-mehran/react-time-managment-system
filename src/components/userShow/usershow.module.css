@@ -1,0 +1,26 @@
+.table {
+    margin-top: 27px;
+    border-collapse: collapse;
+    width: 100%;
+    color: aliceblue;
+  }
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even){background-color: #242121}
+  
+  th {
+    background-color: #FFC312;
+    color: black;
+  }
+  .show-btn{
+    text-decoration: none;
+  }
+  
+  .table_btn{
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+  }

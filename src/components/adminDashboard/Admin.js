@@ -17,6 +17,8 @@ const Admin = () => {
                     <div className='col-4 d-flex'>
                         <div className={styles.btns}>
                         <Link to='/creatuser'><button id={styles.user_btn}>Create User</button></Link>
+                        <button id={styles.user_btn}>All Users</button>
+                        <button id={styles.user_btn}>Work Logs</button>
                         <button onClick={logout} id={styles.user_btn}>Log Out</button>
                         </div>
                     </div>

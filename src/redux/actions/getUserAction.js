@@ -1,24 +1,31 @@
 import axios from "axios"
 
-const getUser = () => async (dispatch, getState) => {
+const getUser = () => async (dispatch) => {
+  dispatch({
+    type: 'USER_LIST_REQUEST',
+  })
+  console.log('i am here')
     try {
-      dispatch({
-        type: 'USER_LIST_REQUEST',
-      })
-  
-      const {
-        userLogin: { userInfo },
-      } = getState()
-    console.log("token",userInfo.token);
-  
+      const obj = JSON.parse(localStorage.getItem('token'))
+      console.log('obj',obj);
+      const token=obj;
+
       const config = {
         headers: {
-          Authorization: `Bearer ${userInfo.token}`,
+          Authorization: 'Bearer' +token,
+          'content-type': 'application/json',
         },
       }
+      const  data  = await axios.get(`http://34.210.129.167/api/users`, config)
+    //   const {
+    //     userLogin: { userInfo },
+    //   } = getState()
+    // console.log("token",userInfo);
   
-      const { data } = await axios.get(`http://34.210.129.167/api/users`, config)
+      
   
+      
+      console.log('data data', data)
       dispatch({
         type: 'USER_LIST_SUCCESS',
         payload: data,
@@ -28,9 +35,7 @@ const getUser = () => async (dispatch, getState) => {
         error.response && error.response.data.message
           ? error.response.data.message
           : error.message
-    //   if (message === 'Not authorized, token failed') {
-    //     dispatch(logout())
-    //   }
+    
       dispatch({
         type: 'USER_LIST_FAIL',
         payload: message,

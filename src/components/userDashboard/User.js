@@ -16,7 +16,7 @@ const User = () => {
                     <h2>Welcome to User Dashboard!</h2>
                     <div className='col-4 d-flex'>
                         <div className={styles.btns}>
-                        <Link to='/creatuser'><button id={styles.user_btn}>Create User</button></Link>
+                        <Link to='/creatuser'><button id={styles.user_btn}>Add Work</button></Link>
                         <button onClick={logout} id={styles.user_btn}>Log Out</button>
                         </div>
                     </div>

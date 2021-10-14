@@ -1,4 +1,6 @@
-const getUserReducer = (state = { users: [] }, action) => {
+const initialstate = { users: []}
+const getUserReducer = (state = initialstate, action) => {
+    console.log('action',action)
     switch (action.type) {
       case 'USER_LIST_REQUEST':
         return { loading: true }
@@ -6,8 +8,8 @@ const getUserReducer = (state = { users: [] }, action) => {
         return { loading: false, users: action.payload }
       case 'USER_LIST_FAIL':
         return { loading: false, error: action.payload }
-      case 'USER_LIST_RESET':
-        return { users: [] }
+  /*     case 'USER_LIST_RESET':
+        return { users: [] } */
       default:
         return state
     }

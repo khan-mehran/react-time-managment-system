@@ -1,3 +1,9 @@
+    .manager{
+        background-color:black;
+        min-height: 100vh;
+        color: aliceblue;
+    }
+    
     .manager h2{
         color: aliceblue;
         text-align: center;

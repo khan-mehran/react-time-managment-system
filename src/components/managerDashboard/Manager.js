@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from './manager.module.css'
 import {useHistory} from 'react-router'
+import UserShow from '../userShow/UserShow'
+
 
 const Manager = () => {
     const history= useHistory();
@@ -22,7 +24,7 @@ const Manager = () => {
                     </div>
                     <div className='col-8'>
                         <div className={styles.data}>
-                            
+                            <UserShow/>
                         </div>
                     </div>
                 </div>

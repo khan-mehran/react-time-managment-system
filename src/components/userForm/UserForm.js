@@ -77,7 +77,7 @@ const UserForm = () => {
                                     <input type="checkbox" />Remember Me
                                 </div>
                                 <div className="form-group">
-                                    <input type="submit" value="user" className="btn float-right" id={styles.login_btn}/>
+                                    <input type="submit" value="add user" className="btn float-right" id={styles.login_btn}/>
                                 </div>
                             </form>
                         </div>
